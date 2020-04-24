@@ -13,6 +13,4 @@ inherit_mode:
 
 require:
   - rubocop-performance
-#  - rubocop-rails
   - rubocop-rspec
-  - rubocop-sorbet
