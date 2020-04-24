@@ -1,0 +1,16 @@
+# Do not modify this file at all.
+---
+inherit_from:
+  - .rubocop_global.yml
+  - .rubocop_project.yml
+  - .rubocop_local.yml
+
+inherit_mode:
+  merge:
+    - Exclude
+    - ExcludedMethods
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec

@@ -1,0 +1,1 @@
+rm lumise-0.1.0.gem && gem build lumise.gemspec && gem install lumise-0.1.0.gem
