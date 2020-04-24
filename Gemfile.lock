@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lumise (0.1.0)
+    lumise (0.1.1)
       thor (~> 1.0)
       tty-command (~> 0.9)
       tty-file (~> 0.8)
