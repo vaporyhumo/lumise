@@ -25,8 +25,7 @@ module Lumise
         filename, branch: 'master', repo: 'lumise-rubocop', user: 'vaporyhumo'
       )
         command(printer: :null).run(<<~CURL).out
-          curl https://raw.githubusercontent.com/#{user}/\
-          #{repo}/#{branch}/#{filename}
+          curl https://raw.githubusercontent.com/#{user}/#{repo}/#{branch}/#{filename}
         CURL
       end
 
