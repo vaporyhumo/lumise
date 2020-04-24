@@ -18,7 +18,7 @@ module Lumise
       end
 
       def create_it(filename)
-        generator.create_file filename, curl_it(filename)
+        generator.create_file filename, curl_it(filename), force: (ENV['LUMISE_FORCE'] || false)
       end
 
       def curl_it(
