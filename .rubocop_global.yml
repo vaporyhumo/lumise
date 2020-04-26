@@ -9,6 +9,9 @@ AllCops:
 Layout/ClassStructure:
   Enabled: true
 
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
 Metrics/AbcSize:
   Exclude:
     - 'db/migrate/*'

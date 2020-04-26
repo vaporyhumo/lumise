@@ -7,3 +7,6 @@ sorbet/rbi/
 
 !bin/console
 !bin/setup
+coverage/
+log/
+tmp/
