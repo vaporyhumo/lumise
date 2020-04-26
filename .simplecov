@@ -25,9 +25,9 @@ module DotSimplecov
 
   def self.start_simplecov
     SimpleCov.start do
-      add_group /lib/
-      add_group /exe/
-      add_group /spec/
+      add_group 'lib', /lib/
+      add_group 'exe', /exe/
+      add_group 'spec', /spec/
     end
   end
 
