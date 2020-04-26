@@ -1,3 +1,0 @@
-# As this file must exist for rubocop to work properly,
-# tell git to ignore it if modified, using:
-# git update-index --skip-worktree .rubocop_local.yml

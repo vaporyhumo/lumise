@@ -1,0 +1,5 @@
+--dir=.
+--ignore=bin/
+--ignore=dummy/
+--ignore=exe/
+--ignore=spec/

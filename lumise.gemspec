@@ -5,30 +5,34 @@ require_relative 'lib/lumise/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'lumise'
-  spec.license       = 'Unlicense'
   spec.version       = Lumise::VERSION
+
   spec.authors       = ['vaporyhumo']
   spec.email         = ['roanvilina@gmail.com']
 
-  spec.summary       = 'Stardart initializers for other gems.'
-  spec.homepage      = 'https://google.com'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.4.0')
+  spec.summary       = 'Stardard initializers for other gems.'
+  spec.description = <<~DESC
+    Standardize your team's gems configurations.
+  DESC
+  spec.license       = 'Unlicense'
 
-  spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://google.com'
-  spec.metadata['changelog_uri'] = 'https://google.com'
+  spec.homepage      = 'https://github.com/vaporyhumo/lumise'
+  spec.metadata = {
+    'bug_tracker_uri' => spec.homepage + '/issues',
+    'changelog_uri' => spec.homepage + '/blob/master/CHANGELOG.md',
+    'documentation_uri' => 'https://www.rubydoc.info/gems/lumise',
+    'source_code_uri' => spec.homepage
+  }
 
-  # Specify which files should be added to the gem when it is released.
-  spec.files = Dir[
-    'lib/**/*', 'exe/**/*', 'bin/**/*', 'Gemfile*', 'Rakefile', 'README.md',
-    'UNLICENSE.txt'
-  ]
+  spec.files         = Dir['lib/**/*']
   spec.bindir        = 'exe'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ['lib']
+  spec.executables   = ['lumise']
+
+  spec.required_ruby_version = '>= 2.4.0'
 
   spec.add_dependency 'thor',        '~> 1.0'
   spec.add_dependency 'tty-command', '~> 0.9'
   spec.add_dependency 'tty-file',    '~> 0.8'
+  spec.add_dependency 'tty-logger',  '~> 0.3'
   spec.add_dependency 'tty-which',   '~> 0.4'
 end

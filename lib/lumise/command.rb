@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 require 'forwardable'
@@ -8,9 +9,6 @@ module Lumise
 
     def_delegators :command, :run
 
-    # Execute this command
-    #
-    # @api public
     def execute(*)
       raise(
         NotImplementedError,
@@ -43,10 +41,10 @@ module Lumise
     # @see http://www.rubydoc.info/gems/tty-editor
     #
     # @api public
-    def editor
-      require 'tty-editor'
-      TTY::Editor
-    end
+    # def editor
+    #   require 'tty-editor'
+    #   TTY::Editor
+    # end
 
     # File manipulation utility methods
     #
@@ -58,25 +56,30 @@ module Lumise
       TTY::File
     end
 
+    def logger
+      require 'tty-logger'
+      TTY::Logger.new
+    end
+
     # Terminal output paging
     #
     # @see http://www.rubydoc.info/gems/tty-pager
     #
     # @api public
-    def pager(**options)
-      require 'tty-pager'
-      TTY::Pager.new(options)
-    end
+    # def pager(**options)
+    #   require 'tty-pager'
+    #   TTY::Pager.new(options)
+    # end
 
     # Terminal platform and OS properties
     #
     # @see http://www.rubydoc.info/gems/tty-pager
     #
     # @api public
-    def platform
-      require 'tty-platform'
-      TTY::Platform.new
-    end
+    # def platform
+    #   require 'tty-platform'
+    #   TTY::Platform.new
+    # end
 
     # The interactive prompt
     #

@@ -2,8 +2,6 @@
 ---
 inherit_from:
   - .rubocop_global.yml
-  - .rubocop_project.yml
-  - .rubocop_local.yml
 
 inherit_mode:
   merge:
@@ -14,3 +12,4 @@ require:
   - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-sorbet
