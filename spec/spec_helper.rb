@@ -2,7 +2,10 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'lumise'
+require 'simplecov'
+
+require_relative 'support/crystalball'
+require_relative '../lib/lumise'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

@@ -1,0 +1,14 @@
+---
+ pre-commit:
+   piped: true
+   commands:
+     4 rubocop:
+       run: time bin/rubocop
+     0 sorbet:
+       run: time bin/srb t
+     2 rspec:
+       run: time bin/rspec
+     3 undercover:
+       run: time bin/undercover
+     1 crystalball:
+       run: time bin/crystalball
