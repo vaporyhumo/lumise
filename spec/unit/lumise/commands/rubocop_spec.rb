@@ -11,6 +11,6 @@ RSpec.describe Lumise::Commands::Rubocop do
 
     command.execute(_output: output)
 
-    expect(output.string).to eq("")
+    expect(output.string).to eq('')
   end
 end

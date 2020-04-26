@@ -15,7 +15,7 @@ module Lumise
     desc 'version', 'lumise version'
     def version
       require_relative 'version'
-      puts "v#{Lumise::VERSION}"
+      $stdout.puts "v#{Lumise::VERSION}"
     end
     map %w[--version -v] => :version
 

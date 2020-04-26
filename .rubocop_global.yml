@@ -4,6 +4,7 @@ AllCops:
   NewCops: enable
   Exclude:
     - 'db/schema.rb'
+    - 'dummy/**/*'
 
 Layout/ClassStructure:
   Enabled: true
@@ -45,6 +46,9 @@ Style/GuardClause:
   Enabled: false
 
 Style/IfUnlessModifier:
+  Enabled: false
+
+Rails:
   Enabled: false
 
 Sorbet:
