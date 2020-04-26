@@ -1,0 +1,29 @@
+---
+# Metric/MethodLength:
+#   Max: 5
+{{# sorbet }}
+#
+# Sorbet/EnforceSignatures:
+#   Enabled: true
+#
+# Sorbet/ValidSigil:
+#   MinimumStrictness: ignore
+#
+# Sorbet/HasSigil:
+#   Enabled: true
+#
+# Sorbet/IgnoreSigil:
+#   Enabled: true
+#
+# Sorbet/FalseSigil:
+#   Enabled: true
+#
+# Sorbet/TrueSigil:
+#   Enabled: true
+#
+# Sorbet/StrictSigil:
+#   Enabled: true
+#
+# Sorbet/StrongSigil:
+#   Enabled: true
+{{/ sorbet}}

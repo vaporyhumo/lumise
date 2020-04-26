@@ -1,0 +1,55 @@
+# Do not modify this file at all.
+---
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/schema.rb'
+
+Layout/ClassStructure:
+  Enabled: true
+
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/routes.rb'
+  ExcludedMethods:
+    - context
+    - describe
+
+Metrics/MethodLength:
+  Max: 5
+  ExcludedMethods: []
+  Exclude:
+    - '**/*.rbi'
+    - 'db/**/*'
+
+Metrics/ParameterLists:
+  Max: 4
+
+{{# rspec }}
+RSpec/EmptyExampleGroup:
+  Enabled: false
+
+{{/ rspec }}
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+{{# sorbet}}
+
+Sorbet:
+  Enabled: false
+{{/ sorbet}}

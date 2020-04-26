@@ -24,12 +24,13 @@ Gem::Specification.new do |spec|
     'source_code_uri' => spec.homepage
   }
 
-  spec.files         = Dir['lib/**/*']
+  spec.files         = Dir['lib/**/{*,.*}']
   spec.bindir        = 'exe'
   spec.executables   = ['lumise']
 
   spec.required_ruby_version = '>= 2.4.0'
 
+  spec.add_dependency 'mustache'
   spec.add_dependency 'thor',        '~> 1.0'
   spec.add_dependency 'tty-command', '~> 0.9'
   spec.add_dependency 'tty-file',    '~> 0.8'

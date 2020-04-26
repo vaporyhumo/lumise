@@ -4,7 +4,6 @@
 module Lumise
   module L
     def l
-      require_relative 'configurations'
       Lumise::Configurations
     end
   end

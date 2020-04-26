@@ -3,6 +3,8 @@
 
 module Warning
   def warn(msg)
-    msg unless 'keyword parameters'.match?(msg)
+    unless 'keyword parameters'.match?(msg)
+      msg
+    end
   end
 end
