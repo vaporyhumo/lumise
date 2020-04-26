@@ -10,16 +10,6 @@ module Lumise
       TTY::Command.new(options)
     end
 
-    def cursor
-      require 'tty-cursor'
-      TTY::Cursor
-    end
-
-    # def editor
-    #   require 'tty-editor'
-    #   TTY::Editor
-    # end
-
     def generator
       require 'tty-file'
       TTY::File
@@ -30,24 +20,9 @@ module Lumise
       TTY::Logger.new
     end
 
-    # def pager(**options)
-    #   require 'tty-pager'
-    #   TTY::Pager.new(options)
-    # end
-
-    # def platform
-    #   require 'tty-platform'
-    #   TTY::Platform.new
-    # end
-
     def prompt(**options)
       require 'tty-prompt'
       TTY::Prompt.new(options)
-    end
-
-    def screen
-      require 'tty-screen'
-      TTY::Screen
     end
 
     def which(*args)

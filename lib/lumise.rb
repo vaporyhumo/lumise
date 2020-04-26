@@ -6,13 +6,13 @@ require 'mustache'
 require 'thor'
 require 'tty-logger'
 
-require_relative 'lumise/warning'
+require_relative 'warning'
 require_relative 'lumise/error'
 require_relative 'lumise/version'
 
 require_relative 'lumise/cli'
-require_relative 'lumise/command'
 require_relative 'lumise/commands'
+require_relative 'lumise/command'
 require_relative 'lumise/l'
 require_relative 'lumise/logger'
 require_relative 'lumise/configurations'
@@ -37,4 +37,3 @@ module Lumise
     Logger.new.error 'There was an error loading .lumise file'
   end
 end
-

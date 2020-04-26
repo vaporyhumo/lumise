@@ -41,7 +41,8 @@ module Lumise
 
         def autogen_command
           <<~AUTOGEN
-            bundle exec rubocop --auto-gen-config --auto-gen-only-exclude \
+            bundle exec rubocop --config .rubocop.yml \
+            --auto-gen-config --auto-gen-only-exclude \
             --exclude-limit $(bundle exec rubocop -L | wc -l)
           AUTOGEN
         end

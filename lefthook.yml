@@ -3,7 +3,7 @@
    piped: true
    commands:
      4 rubocop:
-       run: time bin/rubocop
+       run: time bin/rubocop -fs
      0 sorbet:
        run: time bin/srb t
      2 rspec:

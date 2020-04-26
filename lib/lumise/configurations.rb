@@ -2,15 +2,17 @@
 # frozen_string_literal: true
 
 module Lumise
-  class Configurations
-    @configs = { force: false }
-
-    def self.[]=(key, value)
-      @configs[key] = value
-    end
-
-    def self.[](key)
-      @configs[key]
-    end
-  end
+  Configurations = OpenStruct.new(
+    force: false,
+    plugins: %w[performance rspec]
+  )
 end
+
+# force = true
+# plugins = %w[performance rails rspec sorbet]
+# repo    = "git@github.com:vaporyhumo/lumise-templates.git"
+# branch  = 'recorrido-master'
+#
+# update_gems = false
+# update_files = true
+# update_todo = true

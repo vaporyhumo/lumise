@@ -1,0 +1,13 @@
+# frozen_string_literal: true
+
+Lumise.config do |l|
+  l.force   = true
+  l.plugins = %w[performance rails rspec sorbet]
+  # l.repo    = "git@github.com:vaporyhumo/lumise-templates.git"
+  # l.branch  = 'recorrido-master'
+
+  l.update_gems   = false
+  l.update_files  = true
+  l.update_todo   = true
+end
+
