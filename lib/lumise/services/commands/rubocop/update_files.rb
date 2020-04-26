@@ -49,9 +49,13 @@ module Lumise
           if l[:repo]
             repo_files
           else
-            Dir[templates_path + '**/{*,.*}'].reject do |file|
-              file.scan(/\.$/).first
-            end
+            template_files
+          end
+        end
+
+        def template_files
+          Dir[templates_path + '**/{*,.*}'].reject do |file|
+            file.scan(/\.$/).first
           end
         end
 

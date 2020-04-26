@@ -9,16 +9,42 @@ module Lumise
         extend L
 
         def self.call
-          command(printer: :quiet).run('rm -rf tmp/lumise-rubocop')
-          command(printer: :quiet).run('mkdir -p tmp/lumise-rubocop')
-          Dir.chdir 'tmp' do
-            command(printer: :null).run("git clone #{l[:repo]}") do |out, err|
-              logger.info err.force_encoding(Encoding::UTF_8)
-            end
+          remove_tmp_lumise
+          recreate_tmp_lumise
+          clone_repo_onto_tmp_lumise
+          rubocop_files
+        end
+
+        private
+
+        def self.rubocop_files
+          Dir['tmp/lumise/rubocop/**/{*,.*}']
+        end
+
+        def self.clone_repo_onto_tmp_lumise
+          command(printer: :null).run(git_clone_command) do |_out, err|
+            logger.info err.force_encoding(Encoding::UTF_8)
           end
-          Dir['tmp/lumise-rubocop/**/{*,.*}'].reject do |file|
-            file =~ /\.git/
-          end
+        end
+
+        def self.git_clone_command
+          "git clone --single-branch --branch #{branch} #{repo} tmp/lumise"
+        end
+
+        def self.repo
+          l[:repo]
+        end
+
+        def self.branch
+          l[:branch] || 'master'
+        end
+
+        def self.recreate_tmp_lumise
+          command(printer: :quiet).run('mkdir -p tmp/lumise')
+        end
+
+        def self.remove_tmp_lumise
+          command(printer: :quiet).run('rm -rf tmp/lumise')
         end
       end
     end
