@@ -8,7 +8,7 @@ module Lumise
 
       class << self
         def call
-          if tty_proxy.exec_exist? 'curl'
+          if curl_exists?
             curl_v
           else
             raise CurlError, "Couldn't find curl"
@@ -16,6 +16,10 @@ module Lumise
         end
 
         private
+
+        def curl_exists?
+          tty_proxy.exec_exist? 'curl'
+        end
 
         def curl_v
           command.run('curl -V') do |out, err|

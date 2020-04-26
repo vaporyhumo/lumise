@@ -4,7 +4,6 @@ AllCops:
   NewCops: enable
   Exclude:
     - 'db/schema.rb'
-    - 'dummy/**/*'
 
 Layout/ClassStructure:
   Enabled: true
@@ -27,8 +26,8 @@ Metrics/MethodLength:
   Max: 5
   ExcludedMethods: []
   Exclude:
-   - '**/*.rbi'
-   - 'db/**/*'
+    - '**/*.rbi'
+    - 'db/**/*'
 
 Metrics/ParameterLists:
   Max: 4
@@ -49,9 +48,6 @@ Style/GuardClause:
   Enabled: false
 
 Style/IfUnlessModifier:
-  Enabled: false
-
-Rails:
   Enabled: false
 
 Sorbet:

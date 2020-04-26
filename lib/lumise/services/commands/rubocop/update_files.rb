@@ -27,7 +27,8 @@ module Lumise
         end
 
         def parse_template(file)
-          generator.create_file File.basename(file), mustacho(file), force: l[:force]
+          generator.create_file File.basename(file), mustacho(file),
+                                force: l[:force]
         end
 
         def mustacho(file)
