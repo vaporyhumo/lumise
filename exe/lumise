@@ -2,7 +2,7 @@
 # typed: false
 # frozen_string_literal: true
 
-require_relative '../lib/lumise/cli'
+require_relative '../lib/lumise'
 
 Signal.trap('INT') do
   warn("\n#{caller.join("\n")}: interrupted")

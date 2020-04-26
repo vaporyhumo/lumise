@@ -1,8 +1,6 @@
 # typed: false
 # frozen_string_literal: true
 
-require 'thor'
-
 module Lumise
   # Handle the application command line parsing
   # and the dispatch to various command objects
@@ -14,7 +12,6 @@ module Lumise
 
     desc 'version', 'lumise version'
     def version
-      require_relative 'version'
       $stdout.puts "v#{Lumise::VERSION}"
     end
     map %w[--version -v] => :version
@@ -33,7 +30,6 @@ module Lumise
     private
 
     def execute_rubocop
-      require_relative 'commands/rubocop'
       Lumise::Commands::Rubocop.new(options).execute
     end
   end

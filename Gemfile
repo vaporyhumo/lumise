@@ -5,7 +5,9 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in lumise.gemspec
 gemspec
 
+gem 'byebug'
 gem 'crystalball',         require: false
+gem 'irb',                 require: false
 gem 'lefthook',            require: false
 gem 'rake',                require: false
 gem 'rspec',               require: false
