@@ -1,5 +1,0 @@
-# Generate this file using:
-# rubocop --auto-gen-config --auto-gen-only-exclude \
-#         --exclude-limit $(rubocop -L | wc -l)
-
-# Don't forget to add bundle exec if needed!~
