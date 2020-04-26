@@ -9,13 +9,13 @@ RSpec.describe Lumise::CLI do
 
   describe '#rubocop' do
     it do
-      expect(described_class.new.rubocop).to be
+      expect { described_class.new.rubocop }.not_to raise_error
     end
 
     it do
       cli = described_class.new
       allow(cli).to receive(:options).and_return({ help: true })
-      expect(cli.rubocop).to be
+      expect { cli.rubocop }.not_to raise_error
     end
   end
 end
