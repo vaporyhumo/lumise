@@ -7,7 +7,7 @@ Lumise.config do |l|
   # l.branch  = 'recorrido-master'
 
   l.update_gems   = false
-  l.update_files  = true
-  l.update_todo   = true
+  l.update_files  = false
+  l.update_todo   = false
 end
 

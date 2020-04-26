@@ -10,3 +10,4 @@ sorbet/rbi/
 coverage/
 log/
 tmp/
+.byebug_history
