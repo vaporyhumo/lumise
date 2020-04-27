@@ -71,7 +71,7 @@ module Lumise
         end
 
         def plugins?
-          !plugins.nil?
+          !plugins&.first.nil?
         end
 
         def yes?

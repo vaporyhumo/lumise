@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     lumise (0.2.0)
-      mustache
-      sorbet-runtime
+      mustache (~> 1.1)
+      sorbet-runtime (~> 0.5)
       thor (~> 1.0)
       tty-command (~> 0.9)
       tty-file (~> 0.8)

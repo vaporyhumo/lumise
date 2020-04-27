@@ -29,11 +29,11 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.4.0'
 
-  spec.add_dependency 'mustache'
-  spec.add_dependency 'sorbet-runtime'
-  spec.add_dependency 'thor',        '~> 1.0'
-  spec.add_dependency 'tty-command', '~> 0.9'
-  spec.add_dependency 'tty-file',    '~> 0.8'
-  spec.add_dependency 'tty-logger',  '~> 0.3'
-  spec.add_dependency 'tty-which',   '~> 0.4'
+  spec.add_dependency 'mustache',       '~> 1.1'
+  spec.add_dependency 'sorbet-runtime', '~> 0.5'
+  spec.add_dependency 'thor',           '~> 1.0'
+  spec.add_dependency 'tty-command',    '~> 0.9'
+  spec.add_dependency 'tty-file',       '~> 0.8'
+  spec.add_dependency 'tty-logger',     '~> 0.3'
+  spec.add_dependency 'tty-which',      '~> 0.4'
 end
