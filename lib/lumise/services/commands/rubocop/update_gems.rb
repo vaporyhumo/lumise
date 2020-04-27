@@ -29,6 +29,16 @@ module Lumise
 
         def bundle_update
           command(printer: :quiet).run(bundle_update_command)
+        rescue TTY::Command::ExitError, StandardError => e
+          # Could not find gem 'rubocop'.
+          #
+          # Could not locate Gemfile
+          #
+          # This Bundle hasn't been installed yet. Run `bundle install` to
+          # update and install the bundled gems.
+
+          logger.error e.message
+          exit 1
         end
 
         def yes?

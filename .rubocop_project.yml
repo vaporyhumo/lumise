@@ -1,4 +1,7 @@
 ---
+Rails:
+  Enabled: false
+
 # Metric/MethodLength:
 #   Max: 5
 #
