@@ -1,3 +1,3 @@
 [submodule "lib/lumise/templates"]
 	path = lib/lumise/templates
-	url = git@github.com:vaporyhumo/lumise-templates.git
+	url = https://github.com/vaporyhumo/lumise-templates.git
