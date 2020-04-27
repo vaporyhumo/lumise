@@ -14,12 +14,12 @@ require_relative 'warning'
 require_relative 'lumise/error'
 require_relative 'lumise/version'
 
+require_relative 'lumise/configurations'
 require_relative 'lumise/cli'
 require_relative 'lumise/commands'
 require_relative 'lumise/command'
 require_relative 'lumise/l'
 require_relative 'lumise/logger'
-require_relative 'lumise/configurations'
 
 require_relative 'lumise/commands/rubocop'
 require_relative 'lumise/services/commands/rubocop/repo_files'
