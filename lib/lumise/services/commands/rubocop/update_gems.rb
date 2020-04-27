@@ -1,4 +1,4 @@
-# typed: true
+# typed: strict
 # frozen_string_literal: true
 
 module Lumise
@@ -32,10 +32,10 @@ module Lumise
         end
 
         def yes?
-          if l[:update_gems].nil?
+          if l.update_gems.nil?
             prompt.yes? 'Update rubocop gems?', suffix: 'Yeah/nah'
           else
-            l[:update_gems]
+            l.update_gems
           end
         end
 

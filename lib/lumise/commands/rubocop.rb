@@ -1,4 +1,4 @@
-# typed: true
+# typed: strict
 # frozen_string_literal: true
 
 module Lumise
@@ -6,17 +6,16 @@ module Lumise
     class Rubocop < Lumise::Command
       include L
 
-      def initialize(options)
+      def initialize(_options)
         verify_dependencies
-        @options = options
-        @plugins = l[:plugins] || set_plugins
+        @plugins = set_plugins
       rescue Which::Curl::CurlError
         logger.error 'Please install curl'
       end
 
       attr_reader :plugins
 
-      def execute(*)
+      def execute
         update_gems
         create_files
         update_todo
@@ -24,11 +23,15 @@ module Lumise
 
       private
 
+      def set_plugins
+        l.plugins || prompt_plugins
+      end
+
       def verify_dependencies
         Which::Curl.call
       end
 
-      def set_plugins
+      def prompt_plugins
         choices = %w[performance rails rspec sorbet]
 
         prompt.multi_select 'Which plugins are you using?' do |menu|

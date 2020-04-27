@@ -1,10 +1,14 @@
-# typed: true
+# typed: strict
 # frozen_string_literal: true
 
-require 'logger'
 require 'mustache'
+require 'sorbet-runtime'
 require 'thor'
+require 'tty-command'
+require 'tty-file'
 require 'tty-logger'
+require 'tty-prompt'
+require 'tty-which'
 
 require_relative 'warning'
 require_relative 'lumise/error'
@@ -25,15 +29,17 @@ require_relative 'lumise/services/commands/rubocop/update_todo'
 require_relative 'lumise/which/curl'
 
 module Lumise
-  def self.config
-    yield Lumise::Configurations
+  def self.config(&_blk)
+    yield Lumise::Configurations.instance
   end
 
-  begin
+  def self.load_dotfile
     $LOAD_PATH.unshift File.join(File.dirname(__FILE__))
     load '.lumise'
     Logger.new.success 'loaded .lumise file'
   rescue LoadError
     Logger.new.error 'There was an error loading .lumise file'
   end
+
+  load_dotfile
 end

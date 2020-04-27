@@ -1,4 +1,3 @@
-# typed: false
 # frozen_string_literal: true
 
 require_relative 'lib/lumise/version'
@@ -31,6 +30,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 2.4.0'
 
   spec.add_dependency 'mustache'
+  spec.add_dependency 'sorbet-runtime'
   spec.add_dependency 'thor',        '~> 1.0'
   spec.add_dependency 'tty-command', '~> 0.9'
   spec.add_dependency 'tty-file',    '~> 0.8'
