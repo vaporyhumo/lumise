@@ -2,9 +2,7 @@
 # frozen_string_literal: true
 
 module Warning
+  sig { params(msg: T.any(Regexp, String)).returns(T.untyped) }
   def warn(msg)
-    unless 'keyword parameters'.match?(msg)
-      msg
-    end
   end
 end

@@ -3,6 +3,7 @@ PATH
   specs:
     lumise (0.2.0)
       mustache
+      sorbet-runtime
       thor (~> 1.0)
       tty-command (~> 0.9)
       tty-file (~> 0.8)
@@ -87,6 +88,7 @@ GEM
     simplecov-lcov (0.8.0)
     sorbet (0.5.5563)
       sorbet-static (= 0.5.5563)
+    sorbet-runtime (0.5.5563)
     sorbet-static (0.5.5563-universal-darwin-14)
     thor (1.0.1)
     thread_safe (0.3.6)

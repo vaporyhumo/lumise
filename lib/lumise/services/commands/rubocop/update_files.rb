@@ -1,4 +1,4 @@
-# typed: true
+# typed: strict
 # frozen_string_literal: true
 
 module Lumise
@@ -22,13 +22,15 @@ module Lumise
 
         def perform
           if yes?
-            files.each(&method(:parse_template))
+            files.each do |file|
+              parse_template file
+            end
           end
         end
 
         def parse_template(file)
           generator.create_file File.basename(file), mustacho(file),
-                                force: l[:force]
+                                force: l.force
         end
 
         def mustacho(file)
@@ -47,7 +49,7 @@ module Lumise
         end
 
         def files
-          if l[:repo]
+          if l.repo
             repo_files
           else
             template_files
@@ -73,10 +75,10 @@ module Lumise
         end
 
         def yes?
-          if l[:update_files].nil?
+          if l.update_files.nil?
             prompt.yes? 'Update .rubocop files?', suffix: 'Yeah/nah'
           else
-            l[:update_files]
+            l.update_files
           end
         end
       end

@@ -1,12 +1,12 @@
-# typed: false
+# typed: strict
 # frozen_string_literal: true
 
 module Lumise
   module Commands
     class Rubocop < Lumise::Command
       class RepoFiles
-        extend Commands
-        extend L
+        include Commands
+        include L
 
         def self.call
           new.call
@@ -36,11 +36,11 @@ module Lumise
         end
 
         def repo
-          l[:repo]
+          T.must(l.repo)
         end
 
         def branch
-          l[:branch] || 'master'
+          l.branch || 'master'
         end
 
         def recreate_tmp_lumise

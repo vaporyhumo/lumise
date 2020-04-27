@@ -3,3 +3,5 @@
 --ignore=dummy/
 --ignore=exe/
 --ignore=spec/
+--ignore=Rakefile
+--ignore=lumise.gemspec

@@ -1,38 +1,36 @@
-# typed: false
+# typed: strict
 # frozen_string_literal: true
 
-require 'forwardable'
+require 'tty-command'
+require 'tty-file'
+require 'tty-logger'
+require 'tty-prompt'
+require 'tty-which'
 
 module Lumise
   module Commands
-    def command(**options)
-      require 'tty-command'
+    def command(options)
       TTY::Command.new(options)
     end
 
     def generator
-      require 'tty-file'
       TTY::File
     end
 
     def logger
-      require 'tty-logger'
       TTY::Logger.new
     end
 
     def prompt(**options)
-      require 'tty-prompt'
       TTY::Prompt.new(options)
     end
 
-    def which(*args)
-      require 'tty-which'
-      TTY::Which.which(*args)
+    def which(cmd)
+      TTY::Which.which(cmd)
     end
 
-    def exec_exist?(*args)
-      require 'tty-which'
-      TTY::Which.exist?(*args)
+    def exec_exist?(cmd)
+      TTY::Which.exist?(cmd)
     end
   end
 end

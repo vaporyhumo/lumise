@@ -1,4 +1,4 @@
-# typed: true
+# typed: strict
 # frozen_string_literal: true
 
 module Lumise
@@ -32,10 +32,10 @@ module Lumise
         end
 
         def yes?
-          if l[:update_todo].nil?
+          if l.update_todo.nil?
             prompt.yes? 'Update rubocop TODO file?', suffix: 'Yeah/nah'
           else
-            l[:update_todo]
+            l.update_todo
           end
         end
 
@@ -45,12 +45,6 @@ module Lumise
             --auto-gen-config --auto-gen-only-exclude \
             --exclude-limit $(bundle exec rubocop -L | wc -l)
           AUTOGEN
-        end
-
-        def gems
-          plugins.map do |plugin|
-            'rubocop-' + plugin
-          end.join(' ')
         end
       end
     end

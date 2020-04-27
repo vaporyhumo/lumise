@@ -1,4 +1,4 @@
-# typed: true
+# typed: strict
 # frozen_string_literal: true
 
 module Lumise
@@ -18,7 +18,7 @@ module Lumise
         private
 
         def curl_exists?
-          tty_proxy.exec_exist? 'curl'
+          TTY::Which.exist? 'curl'
         end
 
         def curl_v
@@ -30,7 +30,7 @@ module Lumise
         end
 
         def command
-          tty_proxy.command(printer: :null)
+          TTY::Command.new(printer: :null)
         end
 
         def curl_semver
@@ -38,11 +38,7 @@ module Lumise
         end
 
         def logger
-          tty_proxy.logger
-        end
-
-        def tty_proxy
-          @tty_proxy ||= Command.new
+          TTY::Logger.new
         end
       end
     end
