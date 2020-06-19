@@ -92,7 +92,7 @@ GEM
     simplecov-lcov (0.8.0)
     sorbet (0.5.5569)
       sorbet-static (= 0.5.5569)
-    sorbet-runtime (0.5.5569)
+    sorbet-runtime (0.5.5772)
     sorbet-static (0.5.5569-universal-darwin-14)
     thor (1.0.1)
     thread_safe (0.3.6)
